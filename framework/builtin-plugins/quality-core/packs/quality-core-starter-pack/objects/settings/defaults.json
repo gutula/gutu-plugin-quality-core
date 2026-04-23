@@ -1,0 +1,9 @@
+{
+  "workspace": "quality",
+  "route": "/admin/business/quality",
+  "pageTitle": "Quality Control Room",
+  "defaultRecordState": "draft",
+  "defaultApprovalState": "pending",
+  "defaultPostingState": "unposted",
+  "defaultFulfillmentState": "none"
+}

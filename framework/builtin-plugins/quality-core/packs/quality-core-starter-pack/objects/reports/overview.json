@@ -1,0 +1,20 @@
+{
+  "pluginId": "quality-core",
+  "reports": [
+    "Quality Inspection Summary",
+    "Nonconformance Summary",
+    "CAPA Backlog",
+    "Release Hold Dashboard"
+  ],
+  "exceptionQueues": [
+    "failed-inspection-review",
+    "capa-overdue",
+    "partial-lot-release-review"
+  ],
+  "operationalScenarios": [
+    "incoming-inspection",
+    "in-process-inspection",
+    "quality-hold-and-release",
+    "nonconformance-to-capa"
+  ]
+}

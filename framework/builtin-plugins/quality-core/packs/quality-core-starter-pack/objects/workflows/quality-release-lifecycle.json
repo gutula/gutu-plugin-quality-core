@@ -1,0 +1,9 @@
+{
+  "workflowId": "quality-release-lifecycle",
+  "actors": [
+    "inspector",
+    "quality-lead",
+    "approver"
+  ],
+  "description": "Inspect, hold, release, remediate, and close quality events."
+}

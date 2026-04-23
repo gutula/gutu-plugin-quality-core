@@ -1,0 +1,19 @@
+{
+  "plugin": "quality-core",
+  "requiredPlugins": [
+    "auth-core",
+    "org-tenant-core",
+    "role-policy-core",
+    "audit-core",
+    "workflow-core",
+    "inventory-core",
+    "traceability-core",
+    "product-catalog-core"
+  ],
+  "requiredCapabilities": [
+    "ui.register.admin",
+    "api.rest.mount",
+    "data.write.quality",
+    "events.publish.quality"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "automationId": "quality-core.reconciliation.default",
+  "trigger": "exception-record-opened",
+  "action": "quality.reconciliation.run",
+  "queues": [
+    "failed-inspection-review",
+    "capa-overdue",
+    "partial-lot-release-review"
+  ]
+}

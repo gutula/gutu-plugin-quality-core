@@ -1,0 +1,25 @@
+{
+  "packageId": "quality-core",
+  "packName": "quality-core-starter-pack",
+  "expectedActions": [
+    "quality.inspections.record",
+    "quality.holds.apply",
+    "quality.capa.open"
+  ],
+  "expectedResources": [
+    "quality.inspections",
+    "quality.nonconformance",
+    "quality.capa"
+  ],
+  "expectedReports": [
+    "Quality Inspection Summary",
+    "Nonconformance Summary",
+    "CAPA Backlog",
+    "Release Hold Dashboard"
+  ],
+  "expectedExceptionQueues": [
+    "failed-inspection-review",
+    "capa-overdue",
+    "partial-lot-release-review"
+  ]
+}

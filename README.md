@@ -26,7 +26,7 @@ Inspection, hold and release state, deviation handling, CAPA tracking, and quali
 
 Owns inspections, nonconformance, release holds, and CAPA state so conformity and remediation decisions remain first-class business truth.
 
-- Exports 3 governed actions: `quality.inspections.record`, `quality.holds.apply`, `quality.capa.open`.
+- Exports 7 governed actions: `quality.inspections.record`, `quality.holds.apply`, `quality.capa.open`, `quality.inspections.hold`, `quality.inspections.release`, `quality.inspections.amend`, `quality.inspections.reverse`.
 - Owns 3 resource contracts: `quality.inspections`, `quality.nonconformance`, `quality.capa`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -71,7 +71,7 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 
 | Surface | Count | Details |
 | --- | --- | --- |
-| Actions | 3 | `quality.inspections.record`, `quality.holds.apply`, `quality.capa.open` |
+| Actions | 7 | `quality.inspections.record`, `quality.holds.apply`, `quality.capa.open`, `quality.inspections.hold`, `quality.inspections.release`, `quality.inspections.amend`, `quality.inspections.reverse` |
 | Resources | 3 | `quality.inspections`, `quality.nonconformance`, `quality.capa` |
 | Jobs | 2 | `quality.projections.refresh`, `quality.reconciliation.run` |
 | Workflows | 1 | `quality-release-lifecycle` |
@@ -96,10 +96,10 @@ bun run docs:check
 ```
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/quality-core";
+import { manifest, recordInspectionAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/quality-core";
 
 console.log(manifest.id);
-console.log(createPrimaryRecordAction.id);
+console.log(recordInspectionAction.id);
 console.log(BusinessPrimaryResource.id);
 ```
 

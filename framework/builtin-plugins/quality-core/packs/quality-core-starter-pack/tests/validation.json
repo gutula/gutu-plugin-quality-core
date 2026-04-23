@@ -4,7 +4,11 @@
   "expectedActions": [
     "quality.inspections.record",
     "quality.holds.apply",
-    "quality.capa.open"
+    "quality.capa.open",
+    "quality.inspections.hold",
+    "quality.inspections.release",
+    "quality.inspections.amend",
+    "quality.inspections.reverse"
   ],
   "expectedResources": [
     "quality.inspections",

@@ -91,7 +91,11 @@ export default definePackage({
   "publicCommands": [
     "quality.inspections.record",
     "quality.holds.apply",
-    "quality.capa.open"
+    "quality.capa.open",
+    "quality.inspections.hold",
+    "quality.inspections.release",
+    "quality.inspections.amend",
+    "quality.inspections.reverse"
   ],
   "publicQueries": [
     "quality.release-summary",

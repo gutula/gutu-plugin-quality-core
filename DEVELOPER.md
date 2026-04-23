@@ -71,6 +71,10 @@ Owns inspections, nonconformance, release holds, and CAPA state so conformity an
 | Action | `quality.inspections.record` | Permission: `quality.inspections.write` | Record Inspection<br>Idempotent<br>Audited |
 | Action | `quality.holds.apply` | Permission: `quality.nonconformance.write` | Apply Quality Hold<br>Non-idempotent<br>Audited |
 | Action | `quality.capa.open` | Permission: `quality.capa.write` | Open CAPA<br>Non-idempotent<br>Audited |
+| Action | `quality.inspections.hold` | Permission: `quality.inspections.write` | Place Record On Hold<br>Non-idempotent<br>Audited |
+| Action | `quality.inspections.release` | Permission: `quality.inspections.write` | Release Record Hold<br>Non-idempotent<br>Audited |
+| Action | `quality.inspections.amend` | Permission: `quality.inspections.write` | Amend Record<br>Non-idempotent<br>Audited |
+| Action | `quality.inspections.reverse` | Permission: `quality.inspections.write` | Reverse Record<br>Non-idempotent<br>Audited |
 | Resource | `quality.inspections` | Portal disabled | Inspection execution and result records.<br>Purpose: Own conformity decisions and test execution truth.<br>Admin auto-CRUD enabled<br>Fields: `title`, `recordState`, `approvalState`, `postingState`, `fulfillmentState`, `updatedAt` |
 | Resource | `quality.nonconformance` | Portal disabled | Deviation, nonconformance, and hold state records.<br>Purpose: Surface quality exceptions explicitly instead of burying them in stock or production state.<br>Admin auto-CRUD enabled<br>Fields: `label`, `status`, `requestedAction`, `updatedAt` |
 | Resource | `quality.capa` | Portal disabled | Corrective and preventive action records tied to quality events.<br>Purpose: Track remediation and closure work as a first-class quality process.<br>Admin auto-CRUD enabled<br>Fields: `severity`, `status`, `reasonCode`, `updatedAt` |
@@ -156,11 +160,11 @@ stateDiagram-v2
 ### 1. Host wiring
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/quality-core";
+import { manifest, recordInspectionAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/quality-core";
 
 export const pluginSurface = {
   manifest,
-  createPrimaryRecordAction,
+  recordInspectionAction,
   BusinessPrimaryResource,
   jobDefinitions,
   workflowDefinitions,
@@ -174,10 +178,10 @@ Use this pattern when your host needs to register the plugin’s declared export
 ### 2. Action-first orchestration
 
 ```ts
-import { manifest, createPrimaryRecordAction } from "@plugins/quality-core";
+import { manifest, recordInspectionAction } from "@plugins/quality-core";
 
 console.log("plugin", manifest.id);
-console.log("action", createPrimaryRecordAction.id);
+console.log("action", recordInspectionAction.id);
 ```
 
 - Prefer action IDs as the stable integration boundary.
@@ -219,7 +223,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current truth
 
-- Exports 3 governed actions: `quality.inspections.record`, `quality.holds.apply`, `quality.capa.open`.
+- Exports 7 governed actions: `quality.inspections.record`, `quality.holds.apply`, `quality.capa.open`, `quality.inspections.hold`, `quality.inspections.release`, `quality.inspections.amend`, `quality.inspections.reverse`.
 - Owns 3 resource contracts: `quality.inspections`, `quality.nonconformance`, `quality.capa`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -233,7 +237,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current gaps
 
-- Repo-local documentation verification entrypoints were missing before this pass and need to stay green as the repo evolves.
+- No extra gaps were discovered beyond the plugin’s declared boundaries.
 
 ### Recommended next
 

@@ -5,6 +5,10 @@
 - `quality.inspections.record`: Record Inspection
 - `quality.holds.apply`: Apply Quality Hold
 - `quality.capa.open`: Open CAPA
+- `quality.inspections.hold`: Place Record On Hold
+- `quality.inspections.release`: Release Record Hold
+- `quality.inspections.amend`: Amend Record
+- `quality.inspections.reverse`: Reverse Record
 
 ## Operational scenario matrix
 
@@ -70,6 +74,106 @@ Forbidden shortcuts:
 Open CAPA
 
 Permission: `quality.capa.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `quality.inspections`, `quality.nonconformance`, `quality.capa`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `quality.inspections.hold`
+
+Place Record On Hold
+
+Permission: `quality.inspections.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `quality.inspections`, `quality.nonconformance`, `quality.capa`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `quality.inspections.release`
+
+Release Record Hold
+
+Permission: `quality.inspections.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `quality.inspections`, `quality.nonconformance`, `quality.capa`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `quality.inspections.amend`
+
+Amend Record
+
+Permission: `quality.inspections.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `quality.inspections`, `quality.nonconformance`, `quality.capa`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `quality.inspections.reverse`
+
+Reverse Record
+
+Permission: `quality.inspections.write`
 
 Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
 

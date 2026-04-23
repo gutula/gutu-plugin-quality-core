@@ -9,6 +9,10 @@
 | quality.inspections.record | Record Inspection |
 | quality.holds.apply | Apply Quality Hold |
 | quality.capa.open | Open CAPA |
+| quality.inspections.hold | Place Record On Hold |
+| quality.inspections.release | Release Record Hold |
+| quality.inspections.amend | Amend Record |
+| quality.inspections.reverse | Reverse Record |
 | quality.projections.refresh | Job definition queued on `quality-projections`. |
 | quality.reconciliation.run | Job definition queued on `quality-reconciliation`. |
 | quality-release-lifecycle | Inspect, hold, release, remediate, and close quality events. |

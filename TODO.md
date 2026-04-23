@@ -4,7 +4,7 @@
 
 ## Shipped Now
 
-- Exports 3 governed actions: `quality.inspections.record`, `quality.holds.apply`, `quality.capa.open`.
+- Exports 7 governed actions: `quality.inspections.record`, `quality.holds.apply`, `quality.capa.open`, `quality.inspections.hold`, `quality.inspections.release`, `quality.inspections.amend`, `quality.inspections.reverse`.
 - Owns 3 resource contracts: `quality.inspections`, `quality.nonconformance`, `quality.capa`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -18,7 +18,7 @@
 
 ## Current Gaps
 
-- Repo-local documentation verification entrypoints were missing before this pass and need to stay green as the repo evolves.
+- No additional gaps were identified beyond the plugin’s stated non-goals.
 
 ## Recommended Next
 

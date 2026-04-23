@@ -54,6 +54,11 @@ Owns inspections, nonconformance, release holds, and CAPA state so conformity an
 | Field | Value |
 | --- | --- |
 | Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `inventory-core`, `traceability-core`, `product-catalog-core` |
+| Recommended Plugins | None |
+| Capability Enhancing | `procurement-core`, `manufacturing-core`, `sales-core`, `support-service-core` |
+| Integration Only | `analytics-bi-core` |
+| Suggested Packs | `sector-manufacturing`, `sector-trading-distribution` |
+| Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.quality`, `events.publish.quality` |
 | Provides Capabilities | `quality.inspections`, `quality.nonconformance`, `quality.capa` |
 | Owns Data | `quality.inspections`, `quality.nonconformance`, `quality.capa`, `quality.release-decisions` |

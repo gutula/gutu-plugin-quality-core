@@ -1,6 +1,30 @@
 {
   "packageId": "quality-core",
   "packName": "quality-core-starter-pack",
+  "requiredPlugins": [
+    "auth-core",
+    "org-tenant-core",
+    "role-policy-core",
+    "audit-core",
+    "workflow-core",
+    "inventory-core",
+    "traceability-core",
+    "product-catalog-core"
+  ],
+  "recommendedPlugins": [],
+  "capabilityEnhancingPlugins": [
+    "procurement-core",
+    "manufacturing-core",
+    "sales-core",
+    "support-service-core"
+  ],
+  "integrationOnlyPlugins": [
+    "analytics-bi-core"
+  ],
+  "suggestedPacks": [
+    "sector-manufacturing",
+    "sector-trading-distribution"
+  ],
   "expectedActions": [
     "quality.inspections.record",
     "quality.holds.apply",

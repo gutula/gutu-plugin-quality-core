@@ -66,7 +66,50 @@ export default definePackage({
       "packageId": "product-catalog-core",
       "class": "required",
       "rationale": "Required for Quality Core to keep its boundary governed and explicit."
+    },
+    {
+      "packageId": "procurement-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Quality Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "manufacturing-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Quality Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "sales-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Quality Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "support-service-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Quality Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "analytics-bi-core",
+      "class": "integration-only",
+      "rationale": "Only needed when Quality Core must exchange data or actions with adjacent or external surfaces."
     }
+  ],
+  "recommendedPlugins": [],
+  "capabilityEnhancingPlugins": [
+    "procurement-core",
+    "manufacturing-core",
+    "sales-core",
+    "support-service-core"
+  ],
+  "integrationOnlyPlugins": [
+    "analytics-bi-core"
+  ],
+  "suggestedPacks": [
+    "sector-manufacturing",
+    "sector-trading-distribution"
+  ],
+  "standaloneSupported": true,
+  "installNotes": [
+    "Most quality flows become meaningful once Inventory or Manufacturing is installed, because hold or release decisions need a physical or process boundary."
   ],
   "optionalWith": [],
   "conflictsWith": [],

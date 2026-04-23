@@ -61,11 +61,26 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 | Manifest ID | `quality-core` |
 | Repo | [gutu-plugin-quality-core](https://github.com/gutula/gutu-plugin-quality-core) |
 | Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `inventory-core`, `traceability-core`, `product-catalog-core` |
+| Recommended Plugins | None |
+| Capability Enhancing | `procurement-core`, `manufacturing-core`, `sales-core`, `support-service-core` |
+| Integration Only | `analytics-bi-core` |
+| Suggested Packs | `sector-manufacturing`, `sector-trading-distribution` |
+| Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.quality`, `events.publish.quality` |
 | Provided Capabilities | `quality.inspections`, `quality.nonconformance`, `quality.capa` |
 | Runtime | bun>=1.3.12 |
 | Database | postgres, sqlite |
 | Integration Model | Actions+Resources+Jobs+Workflows+UI |
+
+## Installation Guidance
+
+- Required plugins: `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `inventory-core`, `traceability-core`, `product-catalog-core`
+- Recommended plugins: none
+- Capability-enhancing plugins: `procurement-core`, `manufacturing-core`, `sales-core`, `support-service-core`
+- Integration-only plugins: `analytics-bi-core`
+- Suggested packs: `sector-manufacturing`, `sector-trading-distribution`
+- Standalone supported: yes
+- Most quality flows become meaningful once Inventory or Manufacturing is installed, because hold or release decisions need a physical or process boundary.
 
 ## Capability Matrix
 
